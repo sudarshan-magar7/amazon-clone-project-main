@@ -32,3 +32,14 @@ export function cartShow(){
     });
     document.querySelector('.cart-quantity').innerHTML=cartOrderQuantity;
   }
+
+
+export  function cartRemove(productID){
+    const newCart=[];
+    cart.forEach((itemCart)=>{
+      if(itemCart.productID!==productID){
+        newCart.push(itemCart);
+      }
+    })
+    cart=newCart;
+  }
