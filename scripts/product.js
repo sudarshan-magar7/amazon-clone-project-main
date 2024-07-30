@@ -3,7 +3,7 @@ import {products} from "../data/products.js"
 import { formatPrice } from "./utils/formatprice.js";
 let HTMLdiv='';
   products.forEach(products=>{
-    
+    cartShow();
     const htmldivadd=`<div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
