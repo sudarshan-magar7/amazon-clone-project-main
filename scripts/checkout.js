@@ -58,7 +58,7 @@ cart.forEach((itemCart) => {
         matchingProducts.id
       }">
         Delete
-      </span>
+      </span> 
     </div>
   </div>
 
@@ -112,7 +112,6 @@ document.querySelectorAll(".js-delete-cart-quantity").forEach((link) => {
     cartRemove(productID);
     const container = document.querySelector(`.js-cart-container-${productID}`);
     container.remove();
-    console.log(cart);
   });
 });
 
