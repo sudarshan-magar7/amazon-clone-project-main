@@ -1,12 +1,14 @@
 import { cart, cartRemove, updateDeliveryOption } from "../../data/cart.js";
 import { products,getProducts} from "../../data/products.js";
-import { formatPrice } from "../utils/formatprice.js";
+import { formatPrice, } from "../utils/formatprice.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { deliveryOptions, getDeliveriOption } from "../../data/deliveryCart.js";
 import {renderPaymentSummary} from '../checkout/paymentSummary.js';
+import {checkOutCartQuantity} from '../checkout/cheoutHeader.js';
 let now = dayjs();
 export function renderOrderSummary(){
 let carthtml = "";
+checkOutCartQuantity();
 cart.forEach((itemCart) => {
   const productID = itemCart.productID;
   const matchingProducts=getProducts(productID);
@@ -107,6 +109,7 @@ document.querySelectorAll(".js-delete-cart-quantity").forEach((link) => {
     cartRemove(productID);
     const container = document.querySelector(`.js-cart-container-${productID}`);
     container.remove();
+    checkOutCartQuantity();
     renderPaymentSummary();
   });
 });
