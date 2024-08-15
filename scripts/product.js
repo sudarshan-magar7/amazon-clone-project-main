@@ -1,6 +1,8 @@
 import {cart,cartShow,addToACart} from "../data/cart.js"
-import {products} from "../data/products.js"
+import {products,cartLoad} from "../data/products.js"
 import { formatPrice } from "./utils/formatprice.js";
+cartLoad(productsGrid);
+function productsGrid(){
 let HTMLdiv='';
   products.forEach(products=>{
     cartShow();
@@ -68,5 +70,5 @@ const button=document.querySelectorAll('.js-to-cart-button')
     console.log(cart);
   })
 })
-
+}
 

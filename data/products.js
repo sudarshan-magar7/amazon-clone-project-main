@@ -62,7 +62,22 @@ const cloth=new Clothing({
   type: "clothing",
   sizeChartLink: "images/clothing-size-chart.png"
 });
-
+export let products=[];
+export function cartLoad(fun){
+  const xrh=new XMLHttpRequest();
+  xrh.addEventListener('load',()=>{
+    products=JSON.parse(xrh.response).map((productDetails)=>{
+      if(productDetails.type==='clothing'){
+        return new Clothing(productDetails);
+      }
+      return new Product(productDetails);
+    });
+    fun();
+  });
+  xrh.open('GET','https://supersimplebackend.dev/products');
+  xrh.send();
+}
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -728,3 +743,4 @@ export const products = [
   }
   return new Product(productDetails);
 });
+*/
