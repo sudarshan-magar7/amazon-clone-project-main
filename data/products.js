@@ -728,5 +728,3 @@ export const products = [
   }
   return new Product(productDetails);
 });
-console.log(cloth);
-console.log(cloth.priceCents)
