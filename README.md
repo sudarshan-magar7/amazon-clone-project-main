@@ -11,20 +11,6 @@ This project is an **Amazon Clone** that replicates key features of the popular 
 
 ---
 
-### Images
-- **`icons/`**: Icons used throughout the application.
-- **`products/`**: Images of the products listed on the platform.
-- **`ratings/`**: Images for displaying product ratings visually.
-- Logo and Assets:
-  - `amazon-logo-white.png`
-  - `amazon-logo.png`
-  - `amazon-mobile-logo-white.png`
-  - `amazon-mobile-logo.png`
-  - `appliance-instructions.png`
-  - `appliance-warranty.png`
-  - `clothing-size-chart.png`
-
----
 
 ### Jasmine Standalone
 - **`dist/`** and **`lib/jasmine-5.1.1/`**: Jasmine testing framework setup.
